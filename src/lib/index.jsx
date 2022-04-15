@@ -196,7 +196,7 @@ class OtpInput extends Component {
     if (isDisabled) {
       return;
     }
-
+console.log("handleOnPaste")
     const otp = this.getOtpValue();
     let nextActiveInput = activeInput;
 
@@ -213,7 +213,7 @@ class OtpInput extends Component {
         nextActiveInput++;
       }
     }
-    window.removeAllRanges();
+    e.clipboardData.clearData();
     this.setState({ activeInput: nextActiveInput }, () => {
       this.focusInput(nextActiveInput);
       this.handleOtpChange(otp);
@@ -222,8 +222,8 @@ class OtpInput extends Component {
 
   handleOnChange = (e) => {
     const { value } = e.target;
-
-    if (this.isInputValueValid(value)) {
+console.log("handleOnChange");
+    if (this.isInputValueValid(value)) { console.log("handleOnChangeIF condition");
       this.changeCodeAtFocus(value);
     }
   };
