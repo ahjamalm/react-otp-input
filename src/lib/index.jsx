@@ -213,7 +213,7 @@ class OtpInput extends Component {
         nextActiveInput++;
       }
     }
-
+    window.removeAllRanges();
     this.setState({ activeInput: nextActiveInput }, () => {
       this.focusInput(nextActiveInput);
       this.handleOtpChange(otp);
@@ -256,9 +256,9 @@ class OtpInput extends Component {
     } else if (value && value.trim().length > 1) {
       // This is a workaround for dealing mobile chrome does not fire onPaste event from sms auto-populate.
 
-//       e.clipboardData = {
-//         getData: () => value.trim(),
-//       };
+       e.clipboardData = {
+         getData: () => value.trim(),
+       };
       this.handleOnPaste(e);
     } else {
       // This is a workaround for dealing with keyCode "229 Unidentified" on Android.
