@@ -253,7 +253,7 @@ class OtpInput extends Component {
     let value = e.target.value;
     if (this.isInputValueValid(value)) {
       this.focusNextInput();
-    } else if (value && value.trim().length > 1) {
+    } else if (value && value.trim().length > 0) {
       // This is a workaround for dealing mobile chrome does not fire onPaste event from sms auto-populate.
 
       e.clipboardData = {
