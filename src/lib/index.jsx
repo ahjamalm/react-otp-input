@@ -213,7 +213,7 @@ class OtpInput extends Component {
         nextActiveInput++;
       }
     }
-    
+    window.removeAllRanges();
     this.setState({ activeInput: nextActiveInput }, () => {
       this.focusInput(nextActiveInput);
       this.handleOtpChange(otp);
