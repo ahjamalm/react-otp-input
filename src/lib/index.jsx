@@ -38,7 +38,7 @@ class SingleOtpInput extends PureComponent {
     // Prevent calling function if input already in focus
     if (prevProps.focus !== focus && inputEl && focus) {
       inputEl.focus();
-      inputEl.select();
+//       inputEl.select();
     }
   }
 
@@ -213,7 +213,7 @@ console.log("handleOnPaste")
         nextActiveInput++;
       }
     }
-    e.clipboardData.clearData();
+    
     this.setState({ activeInput: nextActiveInput }, () => {
       this.focusInput(nextActiveInput);
       this.handleOtpChange(otp);
@@ -313,7 +313,7 @@ console.log("if condition", e.target.value);
           onPaste={this.handleOnPaste}
           onFocus={(e) => {
             this.setState({ activeInput: i });
-            e.target.select();
+//             e.target.select();
           }}
           onBlur={() => this.setState({ activeInput: -1 })}
           separator={separator}
