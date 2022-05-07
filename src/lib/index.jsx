@@ -8,6 +8,7 @@ const DELETE = 46;
 const SPACEBAR = 32;
 
 // Doesn't really check if it's a style Object
+
 // Basic implementation to check if it's not a string
 // of classNames and is an Object
 // TODO: Better implementation
